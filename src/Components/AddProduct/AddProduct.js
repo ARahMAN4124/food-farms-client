@@ -44,7 +44,10 @@ const AddProduct = () => {
   return (
     <div>
       <h3>Add events</h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="border shadow-sm rounded p-3 mt-4"
+      >
         <div className="form-row">
           <div className="col form-group">
             <label>Event Title</label>
