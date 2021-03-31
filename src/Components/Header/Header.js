@@ -5,7 +5,7 @@ import Menubar from "../Menubar/Manubar";
 import "./Header.css";
 
 const Header = () => {
-  const [logInUser, setLogInUser] = useContext(userContext);
+  const [logInUser] = useContext(userContext);
   return (
     <div className="header">
       <div className="container">
@@ -23,7 +23,7 @@ const Header = () => {
           )}
         </Menubar>
         <div className="py-3 ">
-          <h1>I GROW BY HELPING PEOPLE IN NEED</h1>
+          <h1>Collect Your Needs From Here</h1>
         </div>
       </div>
     </div>

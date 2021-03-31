@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [productImg, setProductImg] = useState(null);
 
@@ -15,8 +15,6 @@ const AddProduct = () => {
       description: data.description,
       imgUrl: productImg,
     };
-
-    console.log(addProduct);
 
     const url = `http://localhost:5000/addProduct`;
 
@@ -37,7 +35,6 @@ const AddProduct = () => {
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
-        console.log(response.data.data.display_url);
         setProductImg(response.data.data.display_url);
       })
       .catch(function (error) {

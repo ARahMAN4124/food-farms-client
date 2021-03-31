@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { userContext } from "../../App";
 import Header from "../Header/Header";
 
 const CheckOut = () => {
+  const [logInUser] = useContext(userContext);
+  const [checkOut, setCheckOut] = useState({});
+  useEffect(() => {
+    const url = `http://localhost:5000/checkout/${logInUser.productId}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setCheckOut(data[0]);
+      });
+  }, []);
   return (
     <>
       <Header></Header>
       <div className="container pt-4">
-        <h1>this is CheckOut Page</h1>
+        <h1>CheckOut</h1>
         <table className="table rounded shadow mt-4">
           <thead>
             <tr>
@@ -18,14 +31,14 @@ const CheckOut = () => {
           </thead>
           <tbody>
             <tr>
-              <td>product Name</td>
+              <td>{checkOut.productName}</td>
               <td>1</td>
-              <td>150</td>
+              <td>{checkOut.price}</td>
             </tr>
             <tr>
               <th>Total</th>
               <td></td>
-              <th>150</th>
+              <th>{checkOut.price}</th>
             </tr>
           </tbody>
         </table>

@@ -3,10 +3,8 @@ import "./LogIn.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from "./AuthConfig";
-import Logo from "../../logos/Group 1329.png";
 import { userContext } from "../../App";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import Header from "../Header/Header";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -25,7 +23,6 @@ const LogIn = () => {
       .then((result) => {
         var user = result.user;
         const newUser = { ...user };
-
         setLogInUser(newUser);
         history.replace(from);
       })
