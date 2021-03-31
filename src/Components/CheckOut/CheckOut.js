@@ -15,7 +15,7 @@ const CheckOut = () => {
       .then((data) => {
         setCheckOut(data[0]);
       });
-  }, []);
+  }, [logInUser.productId]);
   return (
     <>
       <Header></Header>

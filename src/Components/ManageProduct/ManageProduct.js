@@ -12,8 +12,15 @@ const ManageProduct = () => {
       .then((res) => res.json())
       .then((data) => setManageProduct(data));
   }, []);
-  const handleDeleteProdduct = () => {
-    console.log("product deleted");
+  const handleDeleteProduct = (id) => {
+    fetch(`/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log("deleted product"));
+  };
+  const handleEditProduct = () => {
+    alert("insha allah,I will try to add this feature");
   };
   return (
     <>
@@ -38,6 +45,7 @@ const ManageProduct = () => {
                   <div className="rounded bg-success">
                     <img
                       src={editIcon}
+                      onClick={handleEditProduct}
                       alt="icon"
                       style={{
                         width: "26px",
@@ -47,7 +55,7 @@ const ManageProduct = () => {
                   </div>
                   <div className="rounded bg-danger">
                     <img
-                      onClick={handleDeleteProdduct}
+                      onClick={() => handleDeleteProduct(product._id)}
                       src={deleteIcon}
                       alt="icon"
                       style={{ width: "26px", padding: "1px" }}
