@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import plus from "../../logos/icons/plus 1.png";
-import manageicon from "../../logos/icons/plus 1.png";
+import manageicon from "../../logos/icons/grid 1.png";
 
 import AddProduct from "../AddProduct/AddProduct";
 import ManageProduct from "../ManageProduct/ManageProduct";
@@ -29,7 +29,7 @@ const Admin = () => {
     <div>
       <div className="container">
         <div className="row">
-          <aside className="col-3">
+          <aside className="col-lg-3 col-md-3 col-sm-12">
             <div className="navlogo  text-center pt-4">
               <Link to="/" className="text-decoration-none">
                 <h1>FOODS FARM</h1>
@@ -50,7 +50,7 @@ const Admin = () => {
               </div>
             </div>
           </aside>
-          <div className="col-9  pt-4">
+          <div className="col-lg-9 col-md-9 col-sm-12  pt-4">
             {handleRouteChange.isAddProduct ? (
               <AddProduct></AddProduct>
             ) : (

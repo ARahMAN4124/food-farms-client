@@ -28,7 +28,7 @@ const LogIn = () => {
       })
       .catch((error) => {
         var errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
       });
   };
   return (

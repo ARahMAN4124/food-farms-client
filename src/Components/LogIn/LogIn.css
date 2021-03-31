@@ -1,9 +1,6 @@
-.navlogo img {
-  width: 250px;
-}
 .logInform {
   margin: 0 auto;
-  width: 40em;
+  width: 70%;
   background-color: rgba(0, 148, 246, 0.287);
   height: 350px;
   border-radius: 10px;
@@ -11,4 +8,9 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+@media (max-width: 550px) {
+  .logInform {
+    width: 90%;
+  }
 }

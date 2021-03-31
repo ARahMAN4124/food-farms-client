@@ -37,6 +37,13 @@ const ManageProduct = () => {
             </tr>
           </thead>
           <tbody>
+            {manageProduct.length === 0 && (
+              <div className="text-center">
+                <div className="spinner-border text-success" role="status">
+                  <span className="visually-hidden"></span>
+                </div>
+              </div>
+            )}
             {manageProduct.map((product) => (
               <tr>
                 <th>{product.productName}</th>

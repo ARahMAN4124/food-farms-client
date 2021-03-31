@@ -43,7 +43,7 @@ const CheckOut = () => {
           </tbody>
         </table>
         <div className="ml-auto">
-          <Link to="" className="btn btn-primary ">
+          <Link to="/order" className="btn btn-primary ">
             Checkout
           </Link>
         </div>

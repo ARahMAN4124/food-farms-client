@@ -22,7 +22,7 @@ const Card = ({ card }) => {
     //   });
   };
   return (
-    <div className="col-3">
+    <div className="col-lg-3 col-md-4 col-sm-12">
       <div className="card mb-3" style={{ height: "28em" }}>
         <img
           src={imgUrl}

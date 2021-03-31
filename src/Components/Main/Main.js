@@ -12,6 +12,13 @@ const Main = () => {
   return (
     <div className="container pt-4">
       <div className="row">
+        {cart.length === 0 && (
+          <div className="mx-auto">
+            <div className="spinner-border text-success" role="status">
+              <span className="visually-hidden"></span>
+            </div>
+          </div>
+        )}
         {cart.map((card) => (
           <Card key={card._id} card={card}></Card>
         ))}

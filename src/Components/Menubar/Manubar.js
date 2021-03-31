@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Menubar = (props) => {
   return (
     <div>
-      <Navbar expand="lg">
+      <Navbar className="navbar navbar-dark" expand="lg">
         <Link to="/" className="text-light logo">
           FOODS FARM
         </Link>
