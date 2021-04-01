@@ -63,14 +63,13 @@ const ManageProduct = () => {
                     />
                   </div>
                   <div className="rounded bg-danger">
-                    <button onClick={() => handleDeleteProduct(product._id)}>
-                      <img
-                        src={deleteIcon}
-                        type="button"
-                        alt="icon"
-                        style={{ width: "26px", padding: "1px" }}
-                      />
-                    </button>
+                    <img
+                      onClick={() => handleDeleteProduct(product._id)}
+                      src={deleteIcon}
+                      type="button"
+                      alt="icon"
+                      style={{ width: "26px", padding: "1px" }}
+                    />
                   </div>
                 </th>
               </tr>

@@ -43,10 +43,10 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <h3>Add events</h3>
+      <h3>ADD EVENTS</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="border shadow-sm rounded p-3 mt-4"
+        className="border bg-danger text-light shadow-sm rounded p-3 mt-4"
       >
         <div className="form-row">
           <div className="col form-group">
@@ -89,14 +89,14 @@ const AddProduct = () => {
               type="file"
               name="productImg"
               onChange={handleImgUpload}
-              className="form-control-file btn btn-outline-primary"
+              className="form-control-file btn btn-dark"
               ref={register}
             />
           </div>
         </div>
         <div className="form-group row">
           <div className="col-sm-10">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark">
               SUBMIT
             </button>
           </div>

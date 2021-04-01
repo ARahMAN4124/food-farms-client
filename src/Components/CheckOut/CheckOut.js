@@ -41,7 +41,7 @@ const CheckOut = () => {
       <Header></Header>
       <div className="container pt-4">
         <h1>CheckOut</h1>
-        <table className="table rounded shadow mt-4">
+        <table className="table bg-danger text-light rounded shadow mt-4">
           <thead>
             <tr>
               <th>Description</th>
@@ -63,7 +63,11 @@ const CheckOut = () => {
           </tbody>
         </table>
         <div className="ml-auto">
-          <Link onClick={handleOrder} to="/order" className="btn btn-primary ">
+          <Link
+            onClick={handleOrder}
+            to="/order"
+            className="btn btn-outline-danger "
+          >
             Checkout
           </Link>
         </div>
