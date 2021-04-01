@@ -17,7 +17,7 @@ const Order = () => {
       .then((data) => {
         setOrders(data);
       });
-  }, []);
+  }, [orders]);
 
   return (
     <>
