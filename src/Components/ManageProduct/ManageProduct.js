@@ -7,17 +7,18 @@ import deleteIcon from "../../logos/icons/Group 33150.png";
 const ManageProduct = () => {
   const [manageProduct, setManageProduct] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://cherry-cobbler-14506.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setManageProduct(data));
   }, []);
   const handleDeleteProduct = (id) => {
-    fetch(`/delete/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log("deleted product"));
+    console.log("deleted");
+    // fetch(`http://localhost:5000/delete/${id}`, {
+    //   method: "DELETE",
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => console.log("deleted product"));
   };
   const handleEditProduct = () => {
     alert("insha allah,I will try to add this feature");
@@ -64,6 +65,7 @@ const ManageProduct = () => {
                     <img
                       onClick={() => handleDeleteProduct(product._id)}
                       src={deleteIcon}
+                      type="button"
                       alt="icon"
                       style={{ width: "26px", padding: "1px" }}
                     />

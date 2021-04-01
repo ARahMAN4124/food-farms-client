@@ -10,16 +10,6 @@ const Card = ({ card }) => {
     const buyProduct = { ...logInUser };
     buyProduct.productId = id;
     setLogInUser(buyProduct);
-    // const url = `http://localhost:5000/checkout/${id}`;
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-
-    //     // buyProduct.productName = data[0].productName;
-
-    //     // buyProduct.productprice = data[0].price;
-
-    //   });
   };
   return (
     <div className="col-lg-3 col-md-4 col-sm-12">

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
@@ -16,15 +17,21 @@ const AddProduct = () => {
       imgUrl: productImg,
     };
 
-    const url = `http://localhost:5000/addProduct`;
-
-    fetch(url, {
+    fetch("https://cherry-cobbler-14506.herokuapp.com/addProduct", {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(addProduct),
     }).then((response) => console.log(response));
+
+    // fetch("/addProduct", {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(addProduct),
+    // }).then((response) => console.log(response));
   };
 
   const handleImgUpload = (e) => {
@@ -35,6 +42,7 @@ const AddProduct = () => {
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
+        console.log(response);
         setProductImg(response.data.data.display_url);
       })
       .catch(function (error) {

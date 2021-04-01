@@ -9,7 +9,7 @@ const CheckOut = () => {
   const [logInUser] = useContext(userContext);
   const [checkOut, setCheckOut] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/checkout/${logInUser.productId}`;
+    const url = `https://cherry-cobbler-14506.herokuapp.com/checkout/${logInUser.productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -25,7 +25,7 @@ const CheckOut = () => {
       productName: checkOut.productName,
       productPrice: checkOut.price,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://cherry-cobbler-14506.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
