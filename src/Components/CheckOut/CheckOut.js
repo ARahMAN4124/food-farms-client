@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { userContext } from "../../App";
 import Header from "../Header/Header";
 
 const CheckOut = () => {
+  const { id } = useParams();
+  console.log(id);
   const [logInUser] = useContext(userContext);
   const [checkOut, setCheckOut] = useState({});
   useEffect(() => {
-    const url = `https://cherry-cobbler-14506.herokuapp.com/checkout/${logInUser.productId}`;
+    const url = `https://cherry-cobbler-14506.herokuapp.com/checkout/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -61,7 +63,7 @@ const CheckOut = () => {
           </tbody>
         </table>
         <div className="ml-auto">
-          <Link onClick={handleOrder} to="/" className="btn btn-primary ">
+          <Link onClick={handleOrder} to="/order" className="btn btn-primary ">
             Checkout
           </Link>
         </div>

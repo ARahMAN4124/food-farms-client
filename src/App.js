@@ -28,7 +28,7 @@ function App() {
           <PrivateAuth path="/order">
             <Order></Order>
           </PrivateAuth>
-          <PrivateAuth path="/checkout">
+          <PrivateAuth path="/checkout/:id">
             <CheckOut></CheckOut>
           </PrivateAuth>
           <PrivateAuth path="/events">

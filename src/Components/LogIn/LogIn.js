@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./LogIn.css";
 import firebase from "firebase/app";
 import "firebase/auth";
+import googleIcon from "../../logos/icons/Group 573.png";
 import { firebaseConfig } from "./AuthConfig";
 import { userContext } from "../../App";
 import { Link, useHistory, useLocation } from "react-router-dom";
@@ -46,6 +47,11 @@ const LogIn = () => {
               className="btn btn-outline-primary mb-3"
               onClick={handleSingIn}
             >
+              <img
+                src={googleIcon}
+                alt="google icon"
+                style={{ width: "26px", marginRight: "1em" }}
+              />
               Continue With Google
             </button>
             <p>

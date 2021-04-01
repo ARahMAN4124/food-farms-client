@@ -6,11 +6,7 @@ import { userContext } from "../../App";
 const Card = ({ card }) => {
   const { productName, price, imgUrl, description, _id } = card;
   const [logInUser, setLogInUser] = useContext(userContext);
-  const handleBuyNow = (id) => {
-    const buyProduct = { ...logInUser };
-    buyProduct.productId = id;
-    setLogInUser(buyProduct);
-  };
+
   return (
     <div className="col-lg-3 col-md-4 col-sm-12">
       <div className="card mb-3" style={{ height: "28em" }}>
@@ -30,11 +26,7 @@ const Card = ({ card }) => {
               <h3>৳{price} </h3>
             </div>
             <div>
-              <Link
-                to="/checkout"
-                onClick={() => handleBuyNow(_id)}
-                className="btn btn-primary"
-              >
+              <Link to={`/checkout/${_id}`} className="btn btn-primary">
                 Buy Now
               </Link>
             </div>

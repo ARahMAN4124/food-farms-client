@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { userContext } from "../../App";
 import Header from "../Header/Header";
-import ordergif from "../../images/tenor.gif";
+import orderGif from "../../images/tenor.gif";
+import { Link } from "react-router-dom";
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -25,37 +26,38 @@ const Order = () => {
       </div>
       <div className="container mt-4">
         <div className="row">
-          <div className="col-5">
+          <div className="col-lg-5 col-md-4 col-sm-12">
             <img
-              src={ordergif}
+              src={orderGif}
               className="rounded"
               style={{ height: "450px" }}
               alt="gif"
             />
           </div>
-          <div className="col-7">
+          <div className="col-lg-7 col-md-8 col-sm-12">
             <h2>Your Order List</h2>
             <div>
               <table className="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
                   </tr>
                 </thead>
                 <tbody>
                   {orders.map((order) => (
                     <tr>
                       <th>{order.productName}</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
+                      <td>{order.productPrice}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              <div>
+                <Link to="/" className="btn btn-outline-danger">
+                  Continue To Shopping
+                </Link>
+              </div>
             </div>
           </div>
         </div>
