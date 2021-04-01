@@ -16,6 +16,24 @@ const CheckOut = () => {
         setCheckOut(data[0]);
       });
   }, [logInUser.productId]);
+
+  const handleOrder = () => {
+    const orderProfile = {
+      customerName: logInUser.displayName,
+      customerEmail: logInUser.email,
+      productId: checkOut._id,
+      productName: checkOut.productName,
+      productPrice: checkOut.price,
+    };
+    fetch("http://localhost:5000/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderProfile),
+    }).then((response) => response.json());
+  };
+
   return (
     <>
       <Header></Header>
@@ -43,7 +61,7 @@ const CheckOut = () => {
           </tbody>
         </table>
         <div className="ml-auto">
-          <Link to="/order" className="btn btn-primary ">
+          <Link onClick={handleOrder} to="/" className="btn btn-primary ">
             Checkout
           </Link>
         </div>
