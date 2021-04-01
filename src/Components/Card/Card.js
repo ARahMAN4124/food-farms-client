@@ -9,7 +9,7 @@ const Card = ({ card }) => {
 
   return (
     <div className="col-lg-3 col-md-4 col-sm-12">
-      <div className="card mb-3" style={{ height: "28em" }}>
+      <div className="card mb-3" style={{ height: "25em" }}>
         <img
           src={imgUrl}
           className="card-img-top"
