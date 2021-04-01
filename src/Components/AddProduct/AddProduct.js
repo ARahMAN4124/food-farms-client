@@ -24,14 +24,6 @@ const AddProduct = () => {
       },
       body: JSON.stringify(addProduct),
     }).then((response) => console.log(response));
-
-    // fetch("/addProduct", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(addProduct),
-    // }).then((response) => console.log(response));
   };
 
   const handleImgUpload = (e) => {
@@ -42,6 +34,7 @@ const AddProduct = () => {
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
+        console.log(response);
         console.log(response);
         setProductImg(response.data.data.display_url);
       })
