@@ -8,11 +8,9 @@ I am Abdur Rahman,made a site which have some unique feature. you can buy your n
    3.also you can delete produc.
    4.but you can not buy without logIn by gmail.This mean it have logIn feature.
 
-you can see font side code from :https://github.com/Porgramming-Hero-web-course/full-stack-client-ARahMAN4124
-
 //
 
-also sarver side code : https://github.com/Porgramming-Hero-web-course/full-stack-server-ARahMAN4124
+also sarver side code : https://github.com/ARahMAN4124/food-farms-server
 
 Abdur Rahman
 FontEnd dev.
